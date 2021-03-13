@@ -9,7 +9,11 @@ body {
     margin: auto;
     margin-top: 10px;
     width: 800px;
-    height: 700px;
+    height: 100vh;
+}
+
+li {
+    list-style: none;
 }
 
 #roleSelect {
@@ -51,8 +55,10 @@ body {
 }
 
 #start {
-    width: 250px;
-    height: 30px;
+    background-color: burlywood;
+    border-style: solid;
+    width: 300px;
+    height: 40px;
     border-radius: 5px;
 }
 

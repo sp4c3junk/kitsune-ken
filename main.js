@@ -30,16 +30,19 @@ function selectHunter() {
 //reset scores when reached 5
 function reset() {
     if (myScore > cpuScore) {
-        alert("You're pretty lucky. You win!");
+        alert("You moved graciously. You are the winner!");
         myScore = 0;
         cpuScore = 0;
     } else {
-        alert("You're pretty dumb. You lost!");
+        alert("You're pretty clumsy. You lose the match!");
         myScore = 0;
         cpuScore = 0;
     }
 }
 
+function showWinner() {
+
+}
 //the game itself
 function game(playerSelection, computerSelection) {
     playerSelection = playerWeapon;
@@ -49,19 +52,19 @@ function game(playerSelection, computerSelection) {
         playerSelection == "Fox" && computerSelection == "Village Head" ||
         playerSelection == "Hunter" && computerSelection == "Fox")  {
         myScore++;
-        console.log("You win this round!");
+        document.getElementById("showWinner").innerHTML = "You win this round!";
         } else if (
         playerSelection == "Fox" && computerSelection == "Hunter" ||
         playerSelection == "Hunter" && computerSelection == "Village Head" ||
         playerSelection == "Village Head" && computerSelection == "Fox") {
         cpuScore++;
-        console.log("You lose this round!");
+        document.getElementById("showWinner").innerHTML = "You lose this round...";
         } else { 
-        console.log("It's a draw!");
-        }
+        document.getElementById("showWinner").innerHTML = "It's a draw.";
+    }
 
     document.getElementById("showChoice").innerHTML = "You met the " + computerSelection;
-    document.getElementById("showResults").innerHTML = "Your Score is now: "+ myScore + " --- CPU Score is now: " + cpuScore + ".";
+    document.getElementById("showResults").innerHTML = "Your Score: "+ myScore + " || CPU Score: " + cpuScore;
     console.log(myScore, cpuScore);
     
     if (myScore == 5 || cpuScore == 5) {
