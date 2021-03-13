@@ -1,0 +1,54 @@
+<html>
+    <link href="index.css" rel="stylesheet">
+    
+    <head>
+    <title>Kitsune-ken</title>
+    </head>
+    
+    <body>
+        <div id="titleDescr">
+                <h1 style="font-size: 45px;">Kitsune-ken</h1>
+        </div>
+
+        <div>
+            <h2>Keep in minde that:</h3>
+            <li>'The Hunter' wins against 'The Fox'</li>
+            <li>'The Fox' wins against 'The Head Village'</li>
+            <li>'The Head Village' wins against 'The Hunter'</li>
+            <p><i><b>The first who gets 5 points is the winner</b></i></p>
+        </div>
+
+        <div id="roleSelect">
+            <div class="container">
+                <button class="btn" onclick="selectHead()">
+                    <img class="roles" id="head" src="images/head village.jpg" alt="The Head Village">
+                </button>
+            </div>
+            <div class="container">
+                <button class="btn" onclick="selectFox()">
+                    <img class="roles" id="fox" src="images/fox.jpg" alt="The Fox">
+                </button>
+            </div>
+            <div class="container">
+                <button class="btn" onclick="selectHunter()">
+                    <img class="roles" id="hunter" src="images/hunter.jpg" alt="The Hunter">
+                </button>
+            </div>
+        </div>
+
+        <div id="selectionR">
+            <h2 id="roleSelection">You need to select a role.</h2>
+        </div>
+
+        <div id="startSection">
+            <button id="start" onclick="game()">See who's behind the papar doors</button>
+        </div>
+
+        <div id="results">
+            <h2 id="showChoice">Who is hiding?</h2>
+            <h3 id="showResults">Your Score is now: 0 --- CPU Score is now: 0.</h3>
+            <h3 id="showWinner"></h3>
+        </div>
+            
+    <script src="main.js"></script>
+</body></html>

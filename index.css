@@ -1,0 +1,77 @@
+html {
+    background-color: #d4cabe;
+    font-family: monospace;
+    text-align: center;
+}
+
+body {
+    align-self: center;
+    margin: auto;
+    margin-top: 10px;
+    width: 800px;
+    height: 700px;
+}
+
+#roleSelect {
+    margin: auto;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container {
+    width: 200px;
+}
+
+.roles {
+    max-height: 250px;
+    border-style: groove;
+    border-radius: 15px;
+}
+
+.roles:hover {
+    border-color: lightcoral;
+    max-height: 270px;
+}
+
+.roles:active {
+    border-color: brown;
+}
+
+.btn {
+    background: transparent;
+    border-style: none;
+}
+
+#selectionR {
+    height: 30px;
+}
+
+#start {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+@media (max-width: 700px) {
+    body {
+        width: auto;
+        min-width: 350px;
+    }
+
+    #roleSelect {
+        max-width: 350px;
+        height: 150px;
+    }
+
+    .roles {
+        max-height: 150px;
+    }
+
+    .roles:hover {
+        height: 160px;
+    }
+}
