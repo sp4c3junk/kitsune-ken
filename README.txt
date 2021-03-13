@@ -1,0 +1,1 @@
+This is my project of a rock paper scissor game. From The Odind Project lessons.
