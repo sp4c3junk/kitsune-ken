@@ -30,7 +30,7 @@ function selectHunter() {
 //reset scores when reached 5
 function reset() {
     if (myScore > cpuScore) {
-        alert("You moved graciously. You are the winner!");
+        alert("You move graciously. You are the winner!");
         myScore = 0;
         cpuScore = 0;
     } else {
@@ -40,9 +40,6 @@ function reset() {
     }
 }
 
-function showWinner() {
-
-}
 //the game itself
 function game(playerSelection, computerSelection) {
     playerSelection = playerWeapon;
@@ -67,6 +64,14 @@ function game(playerSelection, computerSelection) {
     document.getElementById("showResults").innerHTML = "Your Score: "+ myScore + " || CPU Score: " + cpuScore;
     console.log(myScore, cpuScore);
     
+    if (computerSelection === "Fox") {
+        document.getElementById("cpuS").src="images/foxcpu.jpg";
+    } else if (computerSelection === "Hunter") {
+        document.getElementById("cpuS").src="images/huntercpu.jpg";
+    } else {
+        document.getElementById("cpuS").src="images/village_headcpu.jpg";
+    }
+ 
     if (myScore == 5 || cpuScore == 5) {
         reset();
         return; 

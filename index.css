@@ -1,5 +1,5 @@
 html {
-    background-color: #d4cabe;
+    background-color: #debf9b;
     font-family: monospace;
     text-align: center;
 }
@@ -8,8 +8,9 @@ body {
     align-self: center;
     margin: auto;
     margin-top: 30px;
-    width: 800px;
-    height: 800px;
+    margin-bottom: 70px;
+    width: auto;
+    height: auto;
 }
 
 li {
@@ -19,7 +20,7 @@ li {
 #roleSelect {
     margin: auto;
     width: 700px;
-    height: 300px;
+    height: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -27,54 +28,73 @@ li {
 }
 
 .container {
-    width: 200px;
+    width: 300px;   
 }
 
 .roles {
-    max-height: 250px;
+    height: 200px;
+    width: auto;
+    object-fit: cover;
     border-style: groove;
     border-radius: 15px;
+    border-color: #b57e64;
+    box-shadow: 5px 10px #c2a880;   
 }
 
 .roles:hover {
-    border-color: lightcoral;
-    max-height: 270px;
+    height: 210px;
+    width: auto;
+    border-color: brown;
+    transition-duration: 0.5s;
 }
 
 .roles:active {
-    border-color: brown;
+    height: 190px;
+    width: auto;
+    transition-duration: 0.05s;
+    box-shadow: 5px 10px #db1c1c;
 }
 
 .btn {
     background: transparent;
     border-style: none;
+    outline: none;
 }
+
 
 #start {
     background-color: burlywood;
     border-style: solid;
     width: 300px;
-    height: 40px;
+    height: 50px;
     border-radius: 5px;
     font-size: larger;
+    box-shadow: 2px 6px #b57e64;
 }
 
-@media (max-width: 700px) {
+#start:active {
+    transform: translateY(3px);
+    box-shadow: 2px 3px;
+    transition-duration: 0.05s;
+}
+
+#cpuS {
+    height: 180px;
+    width: 125;
+    object-fit: cover;
+    border-style: groove;
+    border-color: #b57e64;
+    border-radius: 10px;
+    box-shadow: 3px 6px #c2a880;
+}
+
+@media (max-width: 650px) {
     body {
-        width: auto;
-        min-width: 350px;
+        font-size: smaller;
     }
 
     #roleSelect {
-        max-width: 400px;
-        height: 150px;
+        width: 500px;
     }
 
-    .roles {
-        max-height: 150px;
-    }
-
-    .roles:hover {
-        height: 160px;
-    }
 }
