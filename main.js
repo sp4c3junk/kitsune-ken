@@ -2,6 +2,7 @@ let signs = ["Village Head", "Fox", "Hunter"];
 let myScore = 0;
 let cpuScore = 0;
 let playerWeapon = "";
+let computerRole = "";
 
 //get random value
 function randomValue() {
@@ -13,7 +14,7 @@ function computerPlay() {
     return signs[randomValue()];
 }
 
-//select weapon for player
+//select weapon for the player
 function selectHead() {
     playerWeapon = "Village Head";
     document.getElementById("roleSelection").innerHTML = "You are the Village Head";
@@ -27,24 +28,43 @@ function selectHunter() {
     document.getElementById("roleSelection").innerHTML = "You are the Hunter";
 }
 
-//reset scores when reached 5
-function reset() {
-    if (myScore > cpuScore) {
+//reset scores and forms when scores reach 5
+function resetScore() {
+    if (myScore == 5) {
         alert("You move graciously. You are the winner!");
         myScore = 0;
         cpuScore = 0;
-    } else {
+    } else if (cpuScore == 5) {
         alert("You're pretty clumsy. You lose the match!");
         myScore = 0;
         cpuScore = 0;
+    } else {
+        return;
     }
+    document.getElementById("showResults").innerHTML = "Your Score: 0 || CPU Score: 0";
+    document.getElementById("showChoice").innerHTML = "Who is hiding behind the paper doors?";
+    document.getElementById("showWinner").innerHTML = "---";
+    document.getElementById("cpuS").src="images/qm.png";
+}
+
+// show computer choices
+function showComputer() {
+    if (computerRole === "Fox") {
+        document.getElementById("cpuS").src="images/foxcpu.jpg";
+    } else if (computerRole === "Hunter") {
+        document.getElementById("cpuS").src="images/huntercpu.jpg";
+    } else {
+        document.getElementById("cpuS").src="images/village_headcpu.jpg";
+    }
+    document.getElementById("showChoice").innerHTML = "You met the " + computerRole;
 }
 
 //the game itself
 function game(playerSelection, computerSelection) {
     playerSelection = playerWeapon;
     computerSelection = computerPlay();
-    console.log("You: " + playerSelection, "CPU: " + computerSelection);
+    computerRole = computerSelection;
+
     if (playerSelection == "Village Head" && computerSelection == "Hunter"||
         playerSelection == "Fox" && computerSelection == "Village Head" ||
         playerSelection == "Hunter" && computerSelection == "Fox")  {
@@ -60,20 +80,8 @@ function game(playerSelection, computerSelection) {
         document.getElementById("showWinner").innerHTML = "It's a draw.";
     }
 
-    document.getElementById("showChoice").innerHTML = "You met the " + computerSelection;
     document.getElementById("showResults").innerHTML = "Your Score: "+ myScore + " || CPU Score: " + cpuScore;
-    console.log(myScore, cpuScore);
-    
-    if (computerSelection === "Fox") {
-        document.getElementById("cpuS").src="images/foxcpu.jpg";
-    } else if (computerSelection === "Hunter") {
-        document.getElementById("cpuS").src="images/huntercpu.jpg";
-    } else {
-        document.getElementById("cpuS").src="images/village_headcpu.jpg";
-    }
- 
-    if (myScore == 5 || cpuScore == 5) {
-        reset();
-        return; 
-    }
+
+    showComputer();
+    resetScore();
 }
