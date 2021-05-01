@@ -1,59 +1,54 @@
 <html>
-    <link href="index.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     
     <head>
     <title>Kitsune-ken</title>
     </head>
-    
     <body id="bodys">
-        <div id="titleDescr">
-                <h1 style="font-size: 55px;">Kitsune-ken</h1>
+        <div id="title">
+                <h1 style="font-size: 40px;">Kitsune-ken</h1>
         </div>
-
-        <div>
-            <li>'The Hunter' wins against 'The Fox'</li>
-            <li>'The Fox' wins against 'The Village Head'</li>
-            <li>'The Village Head' wins against 'The Hunter'</li>
+        <div id="game">
+            <h2 id="showResults" style="color: brown;">Your Score: 0 || CPU Score: 0</h2>        
             <p><i><b>The first who gets 5 points is the winner</b></i></p>
-        </div>
-        <hr>
-        <h2 id="showResults" style="color: brown;">Your Score: 0 || CPU Score: 0</h2>
-        
-        <div id="roleSelect">
-            <div class="container">
+            <p>The Fox beats The Village Head</p>
+            <div id="roleSelect">
+                <div class="rule">
+                    <p>The Village Head beats The Hunter</p>
+                </div>
+                <div class="container">
                 <button class="btn" onclick="selectHead()">
-                    <img class="roles" id="head" src="images/village_head.jpg" alt="The Head Village">
+                    <img class="roles" id="head" src="https://hosting.photobucket.com/images/ac133/owlgoes/village_head(1).jpg" alt="The Head Village">
                 </button>
-            </div>
-            <div class="container">
+                </div>
+                <div class="container">
                 <button class="btn" onclick="selectFox()">
-                    <img class="roles" id="fox" src="images/fox.jpg" alt="The Fox">
+                    <img class="roles" id="fox" src="https://hosting.photobucket.com/images/ac133/owlgoes/fox(1).jpg" alt="The Fox">
                 </button>
-            </div>
-            <div class="container">
+                </div>
+                <div class="container">
                 <button class="btn" onclick="selectHunter()">
-                    <img class="roles" id="hunter" src="images/hunter.jpg" alt="The Hunter">
+                    <img class="roles" id="hunter" src="https://hosting.photobucket.com/images/ac133/owlgoes/huntercpu(1).jpg" alt="The Hunter">
                 </button>
+                </div>
+                <div class="rule">
+                    <p>The Hunter beats The Fox</p>
+                </div>
             </div>
-        </div>
-
-        <div id="selectionR">
-            <h2 id="roleSelection">You need to select a role.</h2>
-        </div>
-
-        <div id="startSection">
-            <button id="start" onclick="game()">Open the Shōji</button>
-        </div>
-
-        <div id="results">
-            <h2 id="showChoice">Who is hiding behind the paper doors?</h2>
+            <div id="selectionR">
+                <h2 id="roleSelection">You need to select a role.</h2>
+            </div>
+            <div id="startSection">
+                <button id="start" onclick="game()">Open the Shōji</button>
+            </div>
+            <div id="results">
+                <h2 id="showChoice">Who's hiding behind the paper doors?</h2>
             <div id="cpuSelection">
-                <img id="cpuS" src="images/qm.png" alt="">
+                <img id="cpuS" src="https://hosting.photobucket.com/images/ac133/owlgoes/qm(1).png" alt="">
             </div>
-            <h2 id="showWinner" style="color: brown;">---</h3>
+                <h2 id="showWinner" style="color: brown;">---</h3>
+            </div>
         </div>
-            
     </body>
-    
-    <script src="main.js"></script>
-</html>
+    <script src="script.js"></script>
+    </html>
